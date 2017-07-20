@@ -1,5 +1,6 @@
 certifi==2017.4.17
 chardet==3.0.4
+gunicorn==19.7.1
 idna==2.5
 requests==2.18.1
 six==1.10.0
