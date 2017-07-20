@@ -12,6 +12,8 @@ BOT_ID='U6AK1FK4H'
 # constants
 AT_BOT = "<@" + BOT_ID + ">"
 CLUCK_COMMAND = ""
+HOTDOG_COMMAND = "hotdog"
+HOTD = "a hotdog is a sandwich"
 
 # instantiate Slack & Twilio clients
 slack_client = SlackClient(SLACK_BOT_TOKEN)
@@ -25,7 +27,8 @@ def handle_command(command, channel):
     """
     if command.startswith(CLUCK_COMMAND):
         response = cluckify(command[len(CLUCK_COMMAND):])
-
+    if command.startswith(HOTDOG_COMMAND):
+        response = cluckify(HOTD)
     slack_client.api_call("chat.postMessage", channel=channel,
                           text=response, as_user=True)
 
