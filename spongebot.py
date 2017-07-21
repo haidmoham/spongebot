@@ -13,7 +13,8 @@ BOT_ID='U6AK1FK4H'
 AT_BOT = "<@" + BOT_ID + ">"
 CLUCK_COMMAND = ""
 HOTDOG_COMMAND = "hotdog"
-HOTD = "a hotdog is a sandwich"
+HOTD1 = "a hotdog "
+HOTD2 = " a sandwich"
 
 # instantiate Slack & Twilio clients
 slack_client = SlackClient(SLACK_BOT_TOKEN)
@@ -26,9 +27,10 @@ def handle_command(command, channel):
         returns back what it needs for clarification.
     """
     if command.startswith(CLUCK_COMMAND):
-        response = cluckify(command[len(CLUCK_COMMAND):])
+        response = cluckify(command[len(CLUCK_COMMAND):]) + slack_client
     if command.startswith(HOTDOG_COMMAND):
-        response = cluckify(HOTD)
+        response = HOTD1 + "is" if (random.randint(0, 9) % 2 == 0) else "isn't" + HOTD2
+        response = cluckify(response) + "?"
     slack_client.api_call("chat.postMessage", channel=channel,
                           text=response, as_user=True)
 
