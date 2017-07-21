@@ -29,7 +29,7 @@ def handle_command(command, channel):
     if command.startswith(CLUCK_COMMAND):
         response = cluckify(command[len(CLUCK_COMMAND):]) + slack_client
     if command.startswith(HOTDOG_COMMAND):
-        response = HOTD1 + "is" if (random.randint(0, 9) % 2 == 0) else "isn't" + HOTD2
+        response = HOTD1 + "is" if (random.randint(0, 9) % 2 == 0) else "isn't"  + HOTD2
         response = cluckify(response) + "?"
     slack_client.api_call("chat.postMessage", channel=channel,
                           text=response, as_user=True)
