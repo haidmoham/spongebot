@@ -3,7 +3,7 @@ import time
 import random
 from slackclient import SlackClient
 
-SLACK_BOT_TOKEN='xoxb-214647529153-aeJjURR1XSZKSKSdFZ7qonJA'
+SLACK_BOT_TOKEN='xoxb-244708223792-371903686711-zLWiT4pDIeG82kT6Vx36Wzxn'
 BOT_ID='U6AK1FK4H'
 
 # starterbot's ID as an environment variable
