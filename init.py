@@ -1,2 +1,2 @@
-export SLACK_BOT_TOKEN='xoxb-214647529153-aeJjURR1XSZKSKSdFZ7qonJA'
-export BOT_ID='U6AK1FK4H'
+export SLACK_BOT_TOKEN='definitely wasn't stored as plaintext'
+export BOT_ID='please no'
